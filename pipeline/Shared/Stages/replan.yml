@@ -1,0 +1,13 @@
+stages:
+- stage: RePlan
+  pool:
+    vmImage: 'ubuntu-latest'
+  dependsOn: Apply
+  condition: and(succeededOrFailed(), eq(dependencies.Plan.outputs['Evaluate.Variable.ShouldRun'], 'true'))
+  jobs:
+  
+  # Delay Job
+  - template: ../Jobs/delay.yml
+
+  # Plan Jobs
+  - template: ../Jobs/replan.yml

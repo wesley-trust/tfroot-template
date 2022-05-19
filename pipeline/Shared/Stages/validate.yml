@@ -1,0 +1,11 @@
+stages:
+- stage: Validate
+  pool:
+    vmImage: 'ubuntu-latest'
+  jobs:
+  
+  # Validate Jobs
+  - template: ../Jobs/validate.yml
+
+  # Workspace Job
+  - template: ../Jobs/workspace.yml

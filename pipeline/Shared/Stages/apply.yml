@@ -1,0 +1,10 @@
+stages:
+- stage: Apply
+  pool:
+    vmImage: 'ubuntu-latest'
+  dependsOn: Plan
+  condition: and(succeeded(), eq(dependencies.Plan.outputs['Evaluate.Variable.ShouldRun'], 'true'))
+  jobs:
+
+  # Apply Jobs
+  - template: ../Jobs/apply.yml

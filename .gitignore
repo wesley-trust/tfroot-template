@@ -5,6 +5,13 @@
 *.tfstate
 *.tfstate.*
 
+# HCL Lock files
+.terraform.lock.hcl
+
+# Go files
+*.mod
+*.sum
+
 # Crash log files
 crash.log
 

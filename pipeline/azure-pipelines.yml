@@ -1,0 +1,26 @@
+# Trigger builds on commits and merges to all branches, excluding specified branches
+trigger:
+  batch: true
+  branches:
+    include:
+    - '*'
+    exclude:
+    - main
+
+# Trigger builds on PRs to branch
+pr:
+  branches:
+    include:
+    - main
+
+# Execute on a schedule (measure drift from desired state)
+schedules:
+- cron: "0 */24 * * *"
+  displayName: Run daily
+  branches:
+    include:
+    - main
+  always: true
+
+extends:
+  template: ./Shared/azure-pipelines.yml

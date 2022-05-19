@@ -1,0 +1,19 @@
+jobs:
+- deployment: ReDeploy
+  continueOnError: false
+  environment: '$(Environment)'
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+
+        # Checkout shared steps
+        - checkout: 'tfpipeline-shared'
+          displayName: 'Checkout Shared Pipeline Steps'
+          path: 's/pipeline/Shared/'
+
+        # Run common steps
+        - template: ./Steps/common.yml@tfpipeline-shared
+
+        # Run Unit steps
+        - template: ./Steps/reapply.yml@tfpipeline-shared

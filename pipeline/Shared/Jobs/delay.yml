@@ -1,0 +1,10 @@
+jobs:
+- job: Delay
+  pool: Server
+  steps:
+  
+  # Introduce delay to allow service replication
+  - task: Delay@1
+    displayName: 'Delay for $(DelayMinutes) minutes'
+    inputs:
+      delayForMinutes: $(DelayMinutes)

@@ -1,0 +1,9 @@
+stages:
+- stage: Plan
+  pool:
+    vmImage: 'ubuntu-latest'
+  dependsOn: Validate
+  jobs:
+  
+  # Plan Jobs
+  - template: ../Jobs/plan.yml

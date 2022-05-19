@@ -1,0 +1,9 @@
+# Define global variables
+variables:
+- group: 'terraform-backend'
+- group: 'terraform-system'
+- group: 'terraform-global'
+
+# Specify backend container from the service (which must be lowercase)
+- name: 'backendAzureRmContainerName'
+  value: $[lower(variables['Service'])]

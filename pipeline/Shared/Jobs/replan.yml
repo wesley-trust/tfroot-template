@@ -1,0 +1,16 @@
+jobs:
+- job: ReEvaluate
+  dependsOn: Delay
+  continueOnError: false
+  steps:
+  
+  # Checkout shared steps
+  - checkout: 'tfpipeline-shared'
+    displayName: 'Checkout Shared Pipeline Steps'
+    path: 's/pipeline/Shared/'
+
+  # Run common steps
+  - template: ./Steps/common.yml@tfpipeline-shared
+
+  # Run Unit steps
+  - template: ./Steps/replan.yml@tfpipeline-shared

@@ -1,0 +1,29 @@
+# Define global variables
+variables:
+- template: Variables/groups.yml
+
+# Define repository
+resources:
+  repositories:
+    - repository: tfpipeline-shared
+      type: github
+      name: wesley-trust/tfpipeline-shared
+      endpoint: 'wesley-trust'
+
+# Define stages
+stages:
+
+# Validate
+- template: Stages/validate.yml
+
+# Plan
+- template: Stages/plan.yml
+
+# Apply
+- template: Stages/apply.yml
+
+# RePlan
+- template: Stages/replan.yml
+
+# ReApply
+- template: Stages/reapply.yml
