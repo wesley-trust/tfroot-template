@@ -1,6 +1,6 @@
 # tfroot-template
-Description
-## [CI/CD Pipeline](https://dev.azure.com/wesleytrust/Terraform/)
+(Description)
+## [CI/CD Pipeline](link_to_pipeline)
 Select a stage to view in Azure DevOps. *Note that 'Skipped' stages in the last run, will show as "unknown" by design.*
 | Pipeline |
 | :------: |
