@@ -1,0 +1,9 @@
+stages:
+- stage: Unit
+  condition: or(and(ne(variables['Build.Reason'], 'PullRequest'), ne(variables['Build.SourceBranch'], 'refs/heads/main'), not(startswith(variables['Build.SourceBranch'], 'refs/heads/release/'))), eq(variables['Build.Reason'], 'Manual'))
+  pool:
+    vmImage: 'ubuntu-latest'
+  jobs:
+  
+  # Integration Test Jobs
+  - template: ../Jobs/unit.yml

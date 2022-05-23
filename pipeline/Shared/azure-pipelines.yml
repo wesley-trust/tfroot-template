@@ -13,8 +13,14 @@ resources:
 # Define stages
 stages:
 
+# Unit Tests
+- template: Stages/unit.yml
+
+# Integration Tests
+- template: Stages/integration.yml
+
 # Validate
-- template: Stages/validate.yml
+#- template: Stages/validate.yml
 
 # Plan
 - template: Stages/plan.yml
