@@ -12,5 +12,5 @@ jobs:
   # Run common steps
   - template: ./Steps/common.yml@tfpipeline-shared
 
-  # Run Unit steps
+  # Run steps
   - template: ./Steps/validate.yml@tfpipeline-shared
