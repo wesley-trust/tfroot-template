@@ -7,7 +7,7 @@ jobs:
 
   # Checkout shared steps
   - checkout: 'tfpipeline-shared'
-    displayName: 'Checkout Shared Pipeline Steps'
+    displayName: 'Checkout shared Pipeline steps'
     path: 's/pipeline/Shared/'
 
   # Run common steps

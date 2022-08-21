@@ -1,7 +1,5 @@
 jobs:
-
-- job: UnitTests
-  displayName: 'Unit Tests'
+- job: AutoDeploy
   continueOnError: false
   steps:
 
@@ -13,5 +11,5 @@ jobs:
   # Run common steps
   - template: ./Steps/common.yml@tfpipeline-shared
 
-  # Run Unit steps
-  - template: ./Steps/unit.yml@tfpipeline-shared
+  # Run steps
+  - template: ./Steps/reapply.yml@tfpipeline-shared

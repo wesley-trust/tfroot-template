@@ -1,5 +1,5 @@
 jobs:
-- job: Evaluate
+- job: Plan
   displayName: 'Create Plan'
   dependsOn: New
   condition: or(eq(dependencies.Import.result,'Succeeded'), eq(dependencies.New.result,'Succeeded'))
@@ -8,7 +8,7 @@ jobs:
   
   # Checkout shared steps
   - checkout: 'tfpipeline-shared'
-    displayName: 'Checkout Shared Pipeline Steps'
+    displayName: 'Checkout shared Pipeline steps'
     path: 's/pipeline/Shared/'
 
   # Run common steps

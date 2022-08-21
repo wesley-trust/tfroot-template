@@ -3,7 +3,7 @@ stages:
   condition: or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), startswith(variables['Build.SourceBranch'], 'refs/heads/release/'), eq(variables['Build.Reason'], 'Manual'))
   pool:
     vmImage: 'ubuntu-latest'
-  dependsOn: Integration
+  #dependsOn: Integration
   jobs:
   
   # Validate Jobs
@@ -14,3 +14,6 @@ stages:
 
   # Plan Jobs
   - template: ../Jobs/plan.yml
+
+  # Plan Evaluation Job
+  - template: ../Jobs/evaluate.yml

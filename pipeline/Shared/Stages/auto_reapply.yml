@@ -1,0 +1,10 @@
+stages:
+- stage: AutoReApply
+  pool:
+    vmImage: 'ubuntu-latest'
+  dependsOn: RePlan
+  condition: and(not(failed()), not(canceled()), eq(dependencies.RePlan.outputs['ReEvaluate.OPAVariable.AutoApproveShouldRun'], 'true'), eq(dependencies.RePlan.outputs['Plan.Variable.ShouldRun'], 'true'))
+  jobs:
+
+  # Apply Jobs
+  - template: ../Jobs/auto_reapply.yml

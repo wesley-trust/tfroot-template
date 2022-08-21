@@ -1,10 +1,11 @@
 jobs:
-
-- job: UnitTests
-  displayName: 'Unit Tests'
+- job: ReEvaluate
+  displayName: 'Evaluate Plan'
+  dependsOn: Plan
+  condition: eq(dependencies.Plan.result,'Succeeded')
   continueOnError: false
   steps:
-
+  
   # Checkout shared steps
   - checkout: 'tfpipeline-shared'
     displayName: 'Checkout shared Pipeline steps'
@@ -13,5 +14,5 @@ jobs:
   # Run common steps
   - template: ./Steps/common.yml@tfpipeline-shared
 
-  # Run Unit steps
-  - template: ./Steps/unit.yml@tfpipeline-shared
+  # Run Plan Evaluation
+  - template: ./Steps/reevaluate.yml@tfpipeline-shared

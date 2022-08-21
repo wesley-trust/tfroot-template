@@ -1,6 +1,7 @@
 jobs:
-- job: ReEvaluate
-  dependsOn: Delay
+- job: Plan
+  displayName: 'Create Plan'
+#  dependsOn: Delay
   continueOnError: false
   steps:
   
