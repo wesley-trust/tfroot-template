@@ -2,7 +2,7 @@ jobs:
 - job: ReEvaluate
   displayName: 'Evaluate Plan'
   dependsOn: Plan
-  condition: eq(dependencies.Plan.result,'Succeeded')
+  condition: and(eq(dependencies.Plan.result,'Succeeded'), eq(dependencies.Plan.outputs['Variable.ShouldRun'], 'true'))
   continueOnError: false
   steps:
   
