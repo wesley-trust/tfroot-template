@@ -1,7 +1,7 @@
 jobs:
 - job: Plan
   displayName: 'Create Plan'
-#  dependsOn: Delay
+  dependsOn: Delay
   continueOnError: false
   steps:
   

@@ -9,7 +9,7 @@ stages:
   jobs:
   
   # Delay Job
-  #- template: ../Jobs/delay.yml
+  - template: ../Jobs/delay.yml
 
   # Plan Jobs
   - template: ../Jobs/replan.yml
