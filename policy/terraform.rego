@@ -18,6 +18,9 @@ weights := {
 	"azurerm_availability_set": {"delete": 100, "create": 5, "modify": 1},
 	"azurerm_linux_virtual_machine": {"delete": 100, "create": 10, "modify": 1},
 	"azurerm_windows_virtual_machine": {"delete": 100, "create": 10, "modify": 1},
+	## Virtual Machine Scale Set
+	"azurerm_linux_virtual_machine_scale_set": {"delete": 100, "create": 10, "modify": 1},
+	"azurerm_windows_virtual_machine_scale_set": {"delete": 100, "create": 10, "modify": 1},
 	## Shutdown
 	"azurerm_dev_test_global_vm_shutdown_schedule": {"delete": 100, "create": 5, "modify": 1},
 	## Disks
@@ -62,6 +65,8 @@ weights := {
 	# Traffic Manager
 	"azurerm_traffic_manager_profile": {"delete": 100, "create": 10, "modify": 1},
 	"azurerm_traffic_manager_azure_endpoint": {"delete": 100, "create": 5, "modify": 1},
+	# Image Gallery
+	"azurerm_shared_image_gallery": {"delete": 100, "create": 10, "modify": 1},
 }
 
 # Consider exactly these resource types in calculations
@@ -70,6 +75,8 @@ resource_types := {
 	"azurerm_availability_set",
 	"azurerm_linux_virtual_machine",
 	"azurerm_windows_virtual_machine",
+	"azurerm_linux_virtual_machine_scale_set",
+	"azurerm_windows_virtual_machine_scale_set",
 	"azurerm_dev_test_global_vm_shutdown_schedule",
 	"azurerm_managed_disk",
 	"azurerm_virtual_machine_data_disk_attachment",
@@ -103,6 +110,7 @@ resource_types := {
 	"azurerm_storage_share",
 	"azurerm_traffic_manager_azure_endpoint",
 	"azurerm_traffic_manager_profile",
+	"azurerm_shared_image_gallery",
 }
 
 #########

@@ -1,5 +1,4 @@
 # tfroot-template
-(Description)
 ## [CI/CD Pipeline](link_to_pipeline)
 Select a stage to view in Azure DevOps. *Note that 'Skipped' stages in the last run, will show as "unknown" by design.*
 | Pipeline |
@@ -10,6 +9,11 @@ Select a stage to view in Azure DevOps. *Note that 'Skipped' stages in the last 
 | :--------: | :---------------: |
 |            |                   |
 ### Deployment Stages
-| Plan  | Apply | Replan | Reapply |
-| :---: | :---: | :----: | :-----: |
-|       |       |        |         |
+#### Phase 1
+| Plan  | AutoApply | Apply |
+| :---: | :-------: | :---: |
+|       |           |       |
+#### Phase 2
+| Replan | AutoReApply | ReApply |
+| :----: | :---------: | :-----: |
+|        |             |         |

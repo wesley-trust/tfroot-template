@@ -1,4 +1,4 @@
 # Calculate local variables
 locals {
-  
+
 }
